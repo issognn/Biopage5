@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            transition: transform 0.3s ease;
+            margin: 10px;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .call-option {
+            margin-top: 20px;
+            text-decoration: underline;
+            color: #007bff;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .call-option:hover {
+            color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .logo-link {
+            position: fixed;
+            top: 20px;
+            left: 20px; /* Colocamos el logo en la esquina superior izquierda */
+            z-index:9999;
+        }
+
+        .logo {
+        width: 60px;
+        height: 60px;
+        transition: transform 0.3s ease; /* Agregamos una transición para la animación */
+        }
+
+        /* Agregamos una animación al hacer hover sobre el logo */
+        .logo:hover {
+            transform: scale(1.1); /* Escalamos el tamaño del logo al hacer hover */
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="logo-link">
+        <img src="/img/cecy-removebg-preview.png" alt="Logo" class="logo">
+    </a>
+    <div id="schoolContainer" class="container">
+        <h2>Llamar al número de la escuela</h2>
+        <p>Número: 123-456-7890</p>
+        <p class="call-option" onclick="showPhoneNumberInput()">Prefiero ingresar mi número de teléfono</p>
+    </div>
+
+    <div id="phoneContainer" class="container hidden">
+        <h2>Ingresa tu número de teléfono</h2>
+        <input id="phoneNumber" type="tel" placeholder="Número de teléfono">
+        <button onclick="sendPhoneNumber()">Llamar</button>
+    </div>
+
+    <script>
+        function sendPhoneNumber() {
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            // Aquí puedes hacer algo con el número de teléfono, como enviarlo a un servidor
+            alert("Tu número de teléfono es: " + phoneNumber);
+        }
+
+        function showPhoneNumberInput() {
+            var phoneContainer = document.getElementById('phoneContainer');
+            var schoolContainer = document.getElementById('schoolContainer');
+
+            schoolContainer.classList.add('hidden');
+            phoneContainer.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
+
+
+
+

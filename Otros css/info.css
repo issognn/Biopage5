@@ -1,0 +1,91 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ccc;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Animaciones */
+@keyframes slideFromLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slideFromLeft {
+    animation: slideFromLeft 1s ease-in-out;
+}
+
+@keyframes slideFromRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slideFromRight {
+    animation: slideFromRight 1s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.bounce {
+    animation: bounce 0.5s ease infinite;
+}
+.logo-link {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Colocamos el logo en la esquina superior izquierda */
+    z-index:9999;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease; /* Agregamos una transición para la animación */
+}
+
+/* Agregamos una animación al hacer hover sobre el logo */
+.logo:hover {
+    transform: scale(1.1); /* Escalamos el tamaño del logo al hacer hover */
+}

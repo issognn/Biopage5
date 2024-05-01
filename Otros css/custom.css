@@ -1,0 +1,17 @@
+.logo-link {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Colocamos el logo en la esquina superior izquierda */
+    z-index: index 0;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease; /* Agregamos una transición para la animación */
+}
+
+/* Agregamos una animación al hacer hover sobre el logo */
+.logo:hover {
+    transform: scale(1.1); /* Escalamos el tamaño del logo al hacer hover */
+}
